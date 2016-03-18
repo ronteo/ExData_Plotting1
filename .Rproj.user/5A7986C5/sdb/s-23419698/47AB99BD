@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\npower <- read.csv(\"household_power_consumption.txt\",sep=\";\",na.strings = \"?\", colClasses = \"character\")\npower$Date <- as.Date(power$Date, \"%d/%m/%Y\")\npower_sub <- subset(power, power$Date==as.Date(\"1/2/2007\", \"%d/%m/%Y\") | power$Date==as.Date(\"2/2/2007\", \"%d/%m/%Y\"))\npower_sub$Time <- strptime(paste(power_sub$Date, power_sub$Time), \"%Y-%m-%d %H:%M:%S\")\npower_sub$Global_active_power <- as.numeric(power_sub$Global_active_power)\nhist(power_sub$Global_active_power, col=\"red\", ylim = c(0,1201), xlab = \"Global Active Power (kilowatts)\", main=\"Global Active Power\")",
+    "created" : 1458255278808.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "819869257",
+    "id" : "47AB99BD",
+    "lastKnownWriteTime" : 1458255493,
+    "last_content_update" : 1458255493561,
+    "path" : "~/RProjects/Coursera/ExploratoryDataAnalysis/ExData_Plotting1/plot1.r",
+    "project_path" : "ExData_Plotting1/plot1.r",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}
